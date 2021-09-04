@@ -1,7 +1,7 @@
 import UIKit
 
 enum Scene {
-    case mainVC
+    case mainVC(MainViewModel)
 }
 
 extension Scene {
@@ -11,7 +11,7 @@ extension Scene {
         switch self {
         case .mainVC(let viewModel):
             let nav = UINavigationController()
-            guard var listVC = nav.viewControllers.first as? AlbumListViewController else {
+            guard var listVC = nav.viewControllers.first as? MainViewController else {
                 fatalError()
             }
             listVC.bind(viewModel: viewModel)

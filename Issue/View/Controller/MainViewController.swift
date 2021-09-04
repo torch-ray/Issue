@@ -1,6 +1,8 @@
 import UIKit
 
-final class MainViewController: UIViewController {
+final class MainViewController: UIViewController, ViewModelBindableType {
+    
+    var viewModel: MainViewModel!
     
     private lazy var listCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -11,6 +13,9 @@ final class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+    }
+    
+    func bindViewModel() {
     }
 }
 
