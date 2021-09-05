@@ -6,9 +6,16 @@ final class SearchViewController: UIViewController, ViewModelBindableType {
     
     private lazy var mainView: UIView = {
         let view = UIView()
+        view.layer.masksToBounds = true
+        view.layer.cornerRadius = 5
         return view
     }()
     
+    
+    private lazy var titleLabel: UILabel = {
+        let label = UILabel()
+        return label
+    }()
     
     private lazy var repositorySearchTextField: UITextField = {
         let searchTextField = UITextField()
@@ -29,6 +36,7 @@ private extension SearchViewController {
     private func setup() {
         view.isOpaque = true
         setupMainView()
+        setupLabel()
         setupTextField()
     }
     
@@ -40,6 +48,16 @@ private extension SearchViewController {
         mainView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.25).isActive = true
         mainView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         mainView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+    }
+    
+    private func setupLabel() {
+        mainView.addSubview(titleLabel)
+        titleLabel.text = "OrgName/RepoName"
+        titleLabel.backgroundColor = .systemBlue
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.widthAnchor.constraint(equalTo: mainView.widthAnchor).isActive = true
+        titleLabel.heightAnchor.constraint(equalTo: mainView.heightAnchor, multiplier: 0.1).isActive = true
+        titleLabel.topAnchor.constraint(equalTo: mainView.topAnchor).isActive = true
     }
     
     private func setupTextField() {
