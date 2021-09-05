@@ -19,7 +19,7 @@ final class MainViewController: UIViewController, ViewModelBindableType {
     func bindViewModel() {
         viewModel.issuList
             .drive(listCollectionView.rx.items(cellIdentifier: "IssueCell", cellType: IssueCell.self)) { _, issue, cell in
-                
+                cell.configrue(issue)
             }.disposed(by: rx.disposeBag)
     }
 }
