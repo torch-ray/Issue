@@ -14,8 +14,6 @@ final class MainViewController: UIViewController, ViewModelBindableType {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        
-        listCollectionView.register(IssueCell.self, forCellWithReuseIdentifier: IssueCell.identifier)
     }
     
     func bindViewModel() {
@@ -41,5 +39,20 @@ private extension MainViewController {
         listCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
         listCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
         listCollectionView.backgroundColor = .white
+        listCollectionView.register(IssueCell.self, forCellWithReuseIdentifier: IssueCell.identifier)
+        setupCollectionViewDelegate()
+    }
+    
+    private func setupCollectionViewDelegate() {
+        listCollectionView.rx.setDelegate(self).disposed(by: rx.disposeBag)
+    }
+}
+
+// MARK: CellSize
+extension MainViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let height = listCollectionView.frame.height * 0.1
+        let width = listCollectionView.frame.width
+        return CGSize(width: width, height: height)
     }
 }
