@@ -45,6 +45,11 @@ private extension MainViewController {
     
     private func setupCollectionViewDelegate() {
         listCollectionView.rx.setDelegate(self).disposed(by: rx.disposeBag)
+        
+        listCollectionView.rx.modelSelected(Issue.self)
+            .subscribe(onNext: {_ in
+                
+            }).disposed(by: rx.disposeBag)
     }
 }
 

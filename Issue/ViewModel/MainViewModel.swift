@@ -10,14 +10,14 @@ final class MainViewModel: CommonViewModel {
     
     override init(storage: MemoryStorageType, sceneCoordinator: SceneCoordinatorType) {
         super.init(storage: storage, sceneCoordinator: sceneCoordinator)
-        callDefaultAPI()
+        callDefaultAPI(from: UrlList.apple)
     }
 }
 
 private extension MainViewModel {
     
-    private func callDefaultAPI() {
-        let url = URL(string: "https://api.github.com/repos/apple/swift/issues")
+    private func callDefaultAPI(from url: String) {
+        let url = URL(string: url)
         NetworkManager.getIssue(url!)
             .subscribe(onNext: { [unowned self] data in
                 self.createIssue(list: data)
