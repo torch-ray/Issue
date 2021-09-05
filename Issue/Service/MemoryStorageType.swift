@@ -14,4 +14,7 @@ protocol MemoryStorageType {
     
     @discardableResult
     func currentInfo() -> Issue
+    
+    @discardableResult
+    func removeAll() -> Observable<[Issue]>
 }

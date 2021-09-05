@@ -31,4 +31,11 @@ final class MemoryStrorage: MemoryStorageType {
     func currentInfo() -> Issue {
         return currentIssue
     }
+    
+    @discardableResult
+    func removeAll() -> Observable<[Issue]> {
+        issueStorage.removeAll()
+        store.onNext(issueStorage)
+        return Observable.just([])
+    }
 }

@@ -3,4 +3,54 @@
    uuid = "CFC78DE2-8A3D-4EB7-A750-C2F49E76FA23"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B9B6DAEC-D3C5-4F2F-BAF7-FC3BE557FD26"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Issue/ViewModel/SearchViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "createIssue(list:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B9B6DAEC-D3C5-4F2F-BAF7-FC3BE557FD26 - 9154934105630242"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Issue.SearchViewModel.createIssue(list: Swift.Array&lt;Issue.Issue&gt;) -&gt; ()"
+                  moduleName = "Issue"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ray/Desktop/Issue/Issue/ViewModel/SearchViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  uuid = "B9B6DAEC-D3C5-4F2F-BAF7-FC3BE557FD26 - e9b73ede4e5f2059"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Issue.Issue) -&gt; () in Issue.SearchViewModel.createIssue(list: Swift.Array&lt;Issue.Issue&gt;) -&gt; ()"
+                  moduleName = "Issue"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ray/Desktop/Issue/Issue/ViewModel/SearchViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "34">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
