@@ -4,13 +4,15 @@ import RxCocoa
 
 final class MainViewModel: CommonViewModel {
     
+    let title = BehaviorRelay<String>(value: "apple/swift")
+    
     lazy var issuList: Driver<[Issue]> = {
         return storage.list().asDriver(onErrorJustReturn: [])
     }()
     
     override init(storage: MemoryStorageType, sceneCoordinator: SceneCoordinatorType) {
         super.init(storage: storage, sceneCoordinator: sceneCoordinator)
-        callDefaultAPI(from: UrlList.apple)
+        callDefaultAPI(from: UrlList.appleSwift(title.value))
     }
     
     func moveToDetailVC(_ issue: Issue) {
@@ -23,9 +25,8 @@ final class MainViewModel: CommonViewModel {
 
 private extension MainViewModel {
     
-    private func callDefaultAPI(from url: String) {
-        let url = URL(string: url)
-        NetworkManager.getIssue(url!)
+    private func callDefaultAPI(from url: UrlList) {
+        NetworkManager.getIssue(UrlList.generateURL(url)())
             .subscribe(onNext: { [unowned self] data in
                 self.createIssue(list: data)
             }).disposed(by: rx.disposeBag)

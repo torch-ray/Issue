@@ -17,27 +17,37 @@ final class MainViewController: UIViewController, ViewModelBindableType {
     }
     
     func bindViewModel() {
+        viewModel.title
+            .asDriver(onErrorJustReturn: "")
+            .drive(navigationItem.rx.title)
+            .disposed(by: rx.disposeBag)
+        
         viewModel.issuList
             .drive(listCollectionView.rx.items(cellIdentifier: IssueCell.identifier, cellType: IssueCell.self)) { _, issue, cell in
                 cell.configrue(issue)
             }.disposed(by: rx.disposeBag)
-
     }
 }
 
 // MARK: Setup
 private extension MainViewController {
     private func setup() {
+        setupNavigationTitle()
         setupCollectionView()
+    }
+    
+    private func setupNavigationTitle() {
+        navigationController?.view.backgroundColor = .systemGray6
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     private func setupCollectionView() {
         view.addSubview(listCollectionView)
         listCollectionView.translatesAutoresizingMaskIntoConstraints = false
-        listCollectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
-        listCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
-        listCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
-        listCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
+        listCollectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        listCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        listCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        listCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         listCollectionView.backgroundColor = .white
         listCollectionView.register(IssueCell.self, forCellWithReuseIdentifier: IssueCell.identifier)
         setupCollectionViewDelegate()

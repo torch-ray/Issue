@@ -13,5 +13,5 @@ protocol MemoryStorageType {
     func selected(_ issue: Issue) -> Observable<Issue>
     
     @discardableResult
-    func currentInfo() -> Observable<Issue>
+    func currentInfo() -> Issue
 }
