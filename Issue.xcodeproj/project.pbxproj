@@ -18,6 +18,7 @@
 		719D303926E43EF90077AE0F /* CommonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719D303826E43EF90077AE0F /* CommonViewModel.swift */; };
 		719D303B26E43F4C0077AE0F /* ViewModelBindableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719D303A26E43F4C0077AE0F /* ViewModelBindableType.swift */; };
 		719D303D26E43FC80077AE0F /* SceneCoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719D303C26E43FC80077AE0F /* SceneCoordinatorType.swift */; };
+		719D303F26E43FF80077AE0F /* TransitionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719D303E26E43FF80077AE0F /* TransitionModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		719D303826E43EF90077AE0F /* CommonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViewModel.swift; sourceTree = "<group>"; };
 		719D303A26E43F4C0077AE0F /* ViewModelBindableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelBindableType.swift; sourceTree = "<group>"; };
 		719D303C26E43FC80077AE0F /* SceneCoordinatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCoordinatorType.swift; sourceTree = "<group>"; };
+		719D303E26E43FF80077AE0F /* TransitionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionModel.swift; sourceTree = "<group>"; };
 		801AA2F1DF256DB6CECE654D /* Pods-Issue.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Issue.debug.xcconfig"; path = "Target Support Files/Pods-Issue/Pods-Issue.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -130,6 +132,7 @@
 			children = (
 				719D303226E43E470077AE0F /* Scene.swift */,
 				719D303C26E43FC80077AE0F /* SceneCoordinatorType.swift */,
+				719D303E26E43FF80077AE0F /* TransitionModel.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 				719D303B26E43F4C0077AE0F /* ViewModelBindableType.swift in Sources */,
 				719D303326E43E470077AE0F /* Scene.swift in Sources */,
 				719D303026E43B230077AE0F /* MainViewController.swift in Sources */,
+				719D303F26E43FF80077AE0F /* TransitionModel.swift in Sources */,
 				719D301926E4330D0077AE0F /* AppDelegate.swift in Sources */,
 				719D301B26E4330D0077AE0F /* SceneDelegate.swift in Sources */,
 			);
