@@ -21,6 +21,12 @@ final class MainViewModel: CommonViewModel {
         let scene = Scene.DetailVC(viewModel)
         sceneCoordinator.transition(to: scene, using: .push, animated: false)
     }
+    
+    func moveToSearchVC() {
+        let viewModel = SearchViewModel(storage: storage, sceneCoordinator: sceneCoordinator)
+        let scene = Scene.searchVC(viewModel)
+        sceneCoordinator.transition(to: scene, using: .modal, animated: false)
+    }
 }
 
 private extension MainViewModel {

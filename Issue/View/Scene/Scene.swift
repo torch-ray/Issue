@@ -3,6 +3,7 @@ import UIKit
 enum Scene {
     case mainVC(MainViewModel)
     case DetailVC(DetailViewModel)
+    case searchVC(SearchViewModel)
 }
 
 extension Scene {
@@ -20,6 +21,11 @@ extension Scene {
             var detailVC = DetailViewController()
             detailVC.bind(viewModel: viewModel)
             return detailVC
+            
+        case .searchVC(let viewModel):
+            var searVC = SearchViewController()
+            searVC.bind(viewModel: viewModel)
+            return searVC
         }
     }
 }

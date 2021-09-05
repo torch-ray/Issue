@@ -11,6 +11,12 @@ final class MainViewController: UIViewController, ViewModelBindableType {
         return collectionView
     }()
     
+    private lazy var searchButton: UIBarButtonItem = {
+        let button = UIBarButtonItem()
+        button.title = "Search"
+        return button
+    }()
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -39,6 +45,7 @@ private extension MainViewController {
     private func setupNavigationTitle() {
         navigationController?.view.backgroundColor = .systemGray6
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.rightBarButtonItem = searchButton
     }
     
     private func setupCollectionView() {
@@ -59,6 +66,13 @@ private extension MainViewController {
         listCollectionView.rx.modelSelected(Issue.self)
             .subscribe(onNext: { [unowned self] issue in
                 self.viewModel.moveToDetailVC(issue)
+            }).disposed(by: rx.disposeBag)
+    }
+    
+    private func setupSearchButton() {
+        searchButton.rx.tap
+            .subscribe(onNext: { [unowned self] _ in
+                self.viewModel.moveToSearchVC()
             }).disposed(by: rx.disposeBag)
     }
 }
