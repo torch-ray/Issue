@@ -51,5 +51,9 @@ private extension SearchViewController {
         repositorySearchTextField.heightAnchor.constraint(equalTo: mainView.heightAnchor, multiplier: 0.2).isActive = true
         repositorySearchTextField.centerXAnchor.constraint(equalTo: mainView.centerXAnchor).isActive = true
         repositorySearchTextField.centerYAnchor.constraint(equalTo: mainView.centerYAnchor).isActive = true
+        repositorySearchTextField.rx.controlEvent(.editingDidEndOnExit)
+            .subscribe(onNext: { [unowned self] _ in
+                self.viewModel.makeCloseAction()
+            }).disposed(by: rx.disposeBag)
     }
 }
