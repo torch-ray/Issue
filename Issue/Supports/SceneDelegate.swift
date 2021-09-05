@@ -8,9 +8,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        let mainVC = MainViewController()
-        window?.rootViewController = UINavigationController(rootViewController: mainVC)
         window?.makeKeyAndVisible()
+        setupMainScene()
+    }
+    
+    func setupMainScene() {
+        let viewModel = MainViewModel()
+        let mainScene = Scene.mainVC(viewModel)
+        let sceneCoordinator = SceneCoordinator(window: window!)
+        sceneCoordinator.transition(to: mainScene, using: .root, animated: false)
     }
 }
 

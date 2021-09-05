@@ -10,10 +10,8 @@ extension Scene {
         
         switch self {
         case .mainVC(let viewModel):
-            let nav = UINavigationController()
-            guard var listVC = nav.viewControllers.first as? MainViewController else {
-                fatalError()
-            }
+            var listVC = MainViewController()
+            let nav = UINavigationController(rootViewController: listVC)
             listVC.bind(viewModel: viewModel)
             return nav
         }
