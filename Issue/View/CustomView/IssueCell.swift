@@ -31,6 +31,7 @@ final class IssueCell: UICollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         bannerImage.isHidden = true
+        issueLabel.text = ""
     }
     
     func configrue(_ issue: Issue, _ row: Int) {
