@@ -7,6 +7,11 @@ final class IssueCell: UICollectionViewCell {
         return label
     }()
     
+    private lazy var underLine: UIView = {
+        let view = UIView()
+        return view
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -20,17 +25,34 @@ final class IssueCell: UICollectionViewCell {
     func configrue(_ issue: Issue) {
         issueLabel.text = "\(issue.number) - \(issue.title)"
     }
+}
+
+// MARK: Setup
+private extension IssueCell {
+    private func setup() {
+        setupLabel()
+        setupUnderLineView()
+    }
     
-    func setup() {
+    private func setupLabel() {
         addSubview(issueLabel)
         issueLabel.translatesAutoresizingMaskIntoConstraints = false
-        issueLabel.topAnchor.constraint(equalTo: topAnchor, constant: 0).isActive = true
-        issueLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0).isActive = true
-        issueLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0).isActive = true
-        issueLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0).isActive = true
+        issueLabel.heightAnchor.constraint(equalTo: heightAnchor).isActive = true
+        issueLabel.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.9).isActive = true
+        issueLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+    }
+    
+    private func setupUnderLineView() {
+        addSubview(underLine)
+        underLine.backgroundColor = .lightGray
+        underLine.translatesAutoresizingMaskIntoConstraints = false
+        underLine.widthAnchor.constraint(equalTo: widthAnchor).isActive = true
+        underLine.heightAnchor.constraint(equalToConstant: 1).isActive = true
+        underLine.bottomAnchor.constraint(equalTo: issueLabel.bottomAnchor).isActive = true
     }
 }
 
+// MARK: Identifier
 extension UICollectionViewCell {
     static var identifier: String {
         return "\(self)"
