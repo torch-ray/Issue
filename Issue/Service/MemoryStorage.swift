@@ -3,9 +3,7 @@ import RxSwift
 
 final class MemoryStrorage: MemoryStorageType {
     
-    private var issueStorage: [Issue] = [
-        Issue(number: 4399, title: "asdf", user: User(login: "", avatarURL: ""), body: "")
-    ]
+    private var issueStorage: [Issue] = []
     private lazy var store = BehaviorSubject<[Issue]>(value: issueStorage)
     
     @discardableResult

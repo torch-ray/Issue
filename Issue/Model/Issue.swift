@@ -4,7 +4,7 @@ struct Issue: Codable {
     let number: Int
     let title: String
     let user: User
-    let body: String
+    let body: String?
 }
 
 struct User: Codable {

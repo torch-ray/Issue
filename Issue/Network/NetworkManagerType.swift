@@ -3,5 +3,5 @@ import RxSwift
 
 protocol NetworkManagerType {
     
-    func getIssue(_ url: URL) -> Observable<Issue>
+    static func getIssue(_ url: URL) -> Observable<[Issue]>
 }
