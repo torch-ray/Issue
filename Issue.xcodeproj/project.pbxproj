@@ -23,6 +23,7 @@
 		719D304B26E44ADC0077AE0F /* MemoryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719D304A26E44ADC0077AE0F /* MemoryStorage.swift */; };
 		719D304D26E44AE40077AE0F /* MemoryStorageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719D304C26E44AE40077AE0F /* MemoryStorageType.swift */; };
 		719D305126E44D630077AE0F /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719D305026E44D630077AE0F /* NetworkManager.swift */; };
+		719D305326E44D830077AE0F /* Issue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719D305226E44D830077AE0F /* Issue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		719D304A26E44ADC0077AE0F /* MemoryStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryStorage.swift; sourceTree = "<group>"; };
 		719D304C26E44AE40077AE0F /* MemoryStorageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryStorageType.swift; sourceTree = "<group>"; };
 		719D305026E44D630077AE0F /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		719D305226E44D830077AE0F /* Issue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Issue.swift; sourceTree = "<group>"; };
 		801AA2F1DF256DB6CECE654D /* Pods-Issue.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Issue.debug.xcconfig"; path = "Target Support Files/Pods-Issue/Pods-Issue.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -170,6 +172,7 @@
 		719D304E26E44BAB0077AE0F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				719D305226E44D830077AE0F /* Issue.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				719D303626E43EDE0077AE0F /* MainViewModel.swift in Sources */,
+				719D305326E44D830077AE0F /* Issue.swift in Sources */,
 				719D304126E4401D0077AE0F /* SceneCoordinator.swift in Sources */,
 				719D303D26E43FC80077AE0F /* SceneCoordinatorType.swift in Sources */,
 				719D305126E44D630077AE0F /* NetworkManager.swift in Sources */,
