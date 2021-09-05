@@ -19,6 +19,11 @@ final class DetailViewController: UIViewController, ViewModelBindableType {
         return label
     }()
     
+    private lazy var contentBody: UITextView = {
+        let textView = UITextView()
+        return textView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -32,6 +37,10 @@ final class DetailViewController: UIViewController, ViewModelBindableType {
         viewModel.userID
             .drive(nameLabel.rx.text)
             .disposed(by: rx.disposeBag)
+        
+        viewModel.contentBody
+            .drive(contentBody.rx.text)
+            .disposed(by: rx.disposeBag)
     }
 }
 
@@ -43,6 +52,7 @@ private extension DetailViewController {
         setupUserInfoView()
         setupProfileImageView()
         setupUserNameLabel()
+        setupBodyTextView()
     }
     
     private func setupNavigationViewController() {
@@ -72,5 +82,14 @@ private extension DetailViewController {
         nameLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5).isActive = true
         nameLabel.heightAnchor.constraint(equalTo: userInfoView.heightAnchor).isActive = true
         nameLabel.leadingAnchor.constraint(equalTo: userProfile.trailingAnchor, constant: 10).isActive = true
+    }
+    
+    private func setupBodyTextView() {
+        view.addSubview(contentBody)
+        contentBody.translatesAutoresizingMaskIntoConstraints = false
+        contentBody.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+        contentBody.topAnchor.constraint(equalTo: userProfile.bottomAnchor).isActive = true
+        contentBody.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        
     }
 }

@@ -19,4 +19,8 @@ final class DetailViewModel: CommonViewModel {
     lazy var userImage: UIImage = {
         return DataFormatter.stringToImage(storage.currentInfo().user.avatarURL)
     }()
+    
+    lazy var contentBody: Driver<String> = {
+        return Observable.just(storage.currentInfo().body ?? "내용 없음").asDriver(onErrorJustReturn: "")
+    }()
 }
