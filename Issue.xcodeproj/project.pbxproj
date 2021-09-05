@@ -22,6 +22,7 @@
 		719D304126E4401D0077AE0F /* SceneCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719D304026E4401D0077AE0F /* SceneCoordinator.swift */; };
 		719D304B26E44ADC0077AE0F /* MemoryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719D304A26E44ADC0077AE0F /* MemoryStorage.swift */; };
 		719D304D26E44AE40077AE0F /* MemoryStorageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719D304C26E44AE40077AE0F /* MemoryStorageType.swift */; };
+		719D305126E44D630077AE0F /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719D305026E44D630077AE0F /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		719D304026E4401D0077AE0F /* SceneCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCoordinator.swift; sourceTree = "<group>"; };
 		719D304A26E44ADC0077AE0F /* MemoryStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryStorage.swift; sourceTree = "<group>"; };
 		719D304C26E44AE40077AE0F /* MemoryStorageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryStorageType.swift; sourceTree = "<group>"; };
+		719D305026E44D630077AE0F /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		801AA2F1DF256DB6CECE654D /* Pods-Issue.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Issue.debug.xcconfig"; path = "Target Support Files/Pods-Issue/Pods-Issue.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,6 +98,8 @@
 		719D301726E4330D0077AE0F /* Issue */ = {
 			isa = PBXGroup;
 			children = (
+				719D304F26E44D580077AE0F /* Network */,
+				719D304E26E44BAB0077AE0F /* Model */,
 				719D304226E442740077AE0F /* Service */,
 				719D303426E43ED30077AE0F /* ViewModel */,
 				719D302D26E434660077AE0F /* View */,
@@ -161,6 +165,21 @@
 				719D304C26E44AE40077AE0F /* MemoryStorageType.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		719D304E26E44BAB0077AE0F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		719D304F26E44D580077AE0F /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				719D305026E44D630077AE0F /* NetworkManager.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,6 +298,7 @@
 				719D303626E43EDE0077AE0F /* MainViewModel.swift in Sources */,
 				719D304126E4401D0077AE0F /* SceneCoordinator.swift in Sources */,
 				719D303D26E43FC80077AE0F /* SceneCoordinatorType.swift in Sources */,
+				719D305126E44D630077AE0F /* NetworkManager.swift in Sources */,
 				719D303926E43EF90077AE0F /* CommonViewModel.swift in Sources */,
 				719D303B26E43F4C0077AE0F /* ViewModelBindableType.swift in Sources */,
 				719D303326E43E470077AE0F /* Scene.swift in Sources */,
