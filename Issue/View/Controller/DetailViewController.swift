@@ -10,8 +10,13 @@ final class DetailViewController: UIViewController, ViewModelBindableType {
     }()
     
     private lazy var userProfile: UIImageView = {
-        let imageView = UIImageView()
+        let imageView = UIImageView(image: viewModel.userImage)
         return imageView
+    }()
+    
+    private lazy var nameLabel: UILabel = {
+        let label = UILabel()
+        return label
     }()
     
     override func viewDidLoad() {
@@ -23,6 +28,10 @@ final class DetailViewController: UIViewController, ViewModelBindableType {
         viewModel.title
             .drive(navigationItem.rx.title)
             .disposed(by: rx.disposeBag)
+        
+        viewModel.userID
+            .drive(nameLabel.rx.text)
+            .disposed(by: rx.disposeBag)
     }
 }
 
@@ -33,6 +42,7 @@ private extension DetailViewController {
         setupNavigationViewController()
         setupUserInfoView()
         setupProfileImageView()
+        setupUserNameLabel()
     }
     
     private func setupNavigationViewController() {
@@ -54,5 +64,13 @@ private extension DetailViewController {
         userProfile.widthAnchor.constraint(equalTo: userInfoView.widthAnchor, multiplier: 0.1).isActive = true
         userProfile.heightAnchor.constraint(equalTo: userInfoView.widthAnchor, multiplier: 0.1).isActive = true
         userProfile.leadingAnchor.constraint(equalTo: userInfoView.leadingAnchor, constant: 10).isActive = true
+    }
+    
+    private func setupUserNameLabel() {
+        userInfoView.addSubview(nameLabel)
+        nameLabel.translatesAutoresizingMaskIntoConstraints = false
+        nameLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5).isActive = true
+        nameLabel.heightAnchor.constraint(equalTo: userInfoView.heightAnchor).isActive = true
+        nameLabel.leadingAnchor.constraint(equalTo: userProfile.trailingAnchor, constant: 10).isActive = true
     }
 }

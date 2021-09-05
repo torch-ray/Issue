@@ -11,4 +11,12 @@ final class DetailViewModel: CommonViewModel {
     lazy var currentIssue: Driver<Issue> = {
         return Observable.just(storage.currentInfo()).asDriver(onErrorJustReturn: Issue.empty())
     }()
+    
+    lazy var userID: Driver<String> = {
+        return Observable.just(storage.currentInfo().user.login).asDriver(onErrorJustReturn: "")
+    }()
+    
+    lazy var userImage: UIImage = {
+        return DataFormatter.stringToImage(storage.currentInfo().user.avatarURL)
+    }()
 }
