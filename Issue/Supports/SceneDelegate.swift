@@ -13,9 +13,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     func setupMainScene() {
-        let viewModel = MainViewModel()
-        let mainScene = Scene.mainVC(viewModel)
+        let storage = MemoryStrorage()
         let sceneCoordinator = SceneCoordinator(window: window!)
+        let viewModel = MainViewModel(storage: storage, sceneCoordinator: sceneCoordinator)
+        let mainScene = Scene.mainVC(viewModel)
         sceneCoordinator.transition(to: mainScene, using: .root, animated: false)
     }
 }
