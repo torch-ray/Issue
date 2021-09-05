@@ -1,4 +1,5 @@
 import UIKit
+import RxGesture
 
 final class IssueCell: UICollectionViewCell {
     
@@ -47,6 +48,7 @@ private extension IssueCell {
         setupLabel()
         setupUnderLineView()
         setupBannerImage()
+        setupOpenURL()
     }
     
     private func setupLabel() {
@@ -74,6 +76,17 @@ private extension IssueCell {
         bannerImage.heightAnchor.constraint(equalTo: heightAnchor).isActive = true
         bannerImage.image = DataFormatter.stringToImage(UrlList.banner.generateURL())
         bannerImage.isHidden = true
+    }
+    
+    private func setupOpenURL() {
+        bannerImage.rx.tapGesture()
+            .when(.recognized)
+            .subscribe(onNext: { _ in
+                guard let url = URL(string: "http://thingsflow.com/ko/home/"), UIApplication.shared.canOpenURL(url) else {
+                    return
+                }
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }).disposed(by: rx.disposeBag)
     }
 }
 
