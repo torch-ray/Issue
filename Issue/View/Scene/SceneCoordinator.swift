@@ -46,6 +46,7 @@ final class SceneCoordinator: SceneCoordinatorType {
             currentVC = target.sceneViewController
             
         case .modal:
+            target.modalPresentationStyle = .overCurrentContext
             currentVC.present(target, animated: animated) {
                 subject.onCompleted()
             }

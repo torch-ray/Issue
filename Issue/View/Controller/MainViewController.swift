@@ -40,6 +40,7 @@ private extension MainViewController {
     private func setup() {
         setupNavigationTitle()
         setupCollectionView()
+        setupSearchButton()
     }
     
     private func setupNavigationTitle() {
