@@ -25,6 +25,7 @@
 		719D305126E44D630077AE0F /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719D305026E44D630077AE0F /* NetworkManager.swift */; };
 		719D305326E44D830077AE0F /* Issue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719D305226E44D830077AE0F /* Issue.swift */; };
 		719D305526E44EBB0077AE0F /* NetworkManagerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719D305426E44EBB0077AE0F /* NetworkManagerType.swift */; };
+		719D305826E452140077AE0F /* IssueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719D305726E452140077AE0F /* IssueCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		719D305026E44D630077AE0F /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		719D305226E44D830077AE0F /* Issue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Issue.swift; sourceTree = "<group>"; };
 		719D305426E44EBB0077AE0F /* NetworkManagerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerType.swift; sourceTree = "<group>"; };
+		719D305726E452140077AE0F /* IssueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueCell.swift; sourceTree = "<group>"; };
 		801AA2F1DF256DB6CECE654D /* Pods-Issue.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Issue.debug.xcconfig"; path = "Target Support Files/Pods-Issue/Pods-Issue.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -127,6 +129,7 @@
 		719D302D26E434660077AE0F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				719D305626E452080077AE0F /* CustomView */,
 				719D303126E43E3C0077AE0F /* Scene */,
 				719D302E26E4346B0077AE0F /* Controller */,
 			);
@@ -186,6 +189,14 @@
 				719D305426E44EBB0077AE0F /* NetworkManagerType.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		719D305626E452080077AE0F /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				719D305726E452140077AE0F /* IssueCell.swift */,
+			);
+			path = CustomView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,6 +315,7 @@
 				719D305526E44EBB0077AE0F /* NetworkManagerType.swift in Sources */,
 				719D303626E43EDE0077AE0F /* MainViewModel.swift in Sources */,
 				719D305326E44D830077AE0F /* Issue.swift in Sources */,
+				719D305826E452140077AE0F /* IssueCell.swift in Sources */,
 				719D304126E4401D0077AE0F /* SceneCoordinator.swift in Sources */,
 				719D303D26E43FC80077AE0F /* SceneCoordinatorType.swift in Sources */,
 				719D305126E44D630077AE0F /* NetworkManager.swift in Sources */,

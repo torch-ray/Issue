@@ -1,4 +1,5 @@
 import UIKit
+import NSObject_Rx
 
 final class MainViewController: UIViewController, ViewModelBindableType {
     
@@ -16,6 +17,10 @@ final class MainViewController: UIViewController, ViewModelBindableType {
     }
     
     func bindViewModel() {
+        viewModel.issuList
+            .drive(listCollectionView.rx.items(cellIdentifier: "IssueCell", cellType: IssueCell.self)) { _, issue, cell in
+                
+            }.disposed(by: rx.disposeBag)
     }
 }
 
