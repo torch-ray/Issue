@@ -23,8 +23,8 @@ final class MainViewController: UIViewController, ViewModelBindableType {
             .disposed(by: rx.disposeBag)
         
         viewModel.issuList
-            .drive(listCollectionView.rx.items(cellIdentifier: IssueCell.identifier, cellType: IssueCell.self)) { _, issue, cell in
-                cell.configrue(issue)
+            .drive(listCollectionView.rx.items(cellIdentifier: IssueCell.identifier, cellType: IssueCell.self)) { row, issue, cell in
+                cell.configrue(issue, row)
             }.disposed(by: rx.disposeBag)
     }
 }

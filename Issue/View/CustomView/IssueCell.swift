@@ -12,6 +12,11 @@ final class IssueCell: UICollectionViewCell {
         return view
     }()
     
+    private lazy var bannerImage: UIImageView = {
+        let imageView = UIImageView()
+        return imageView
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -22,7 +27,16 @@ final class IssueCell: UICollectionViewCell {
         setup()
     }
     
-    func configrue(_ issue: Issue) {
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        bannerImage.isHidden = true
+    }
+    
+    func configrue(_ issue: Issue, _ row: Int) {
+        if row == 4 {
+            bannerImage.isHidden = false
+            return
+        }
         issueLabel.text = "\(issue.number) - \(issue.title)"
     }
 }
@@ -32,6 +46,7 @@ private extension IssueCell {
     private func setup() {
         setupLabel()
         setupUnderLineView()
+        setupBannerImage()
     }
     
     private func setupLabel() {
@@ -49,6 +64,16 @@ private extension IssueCell {
         underLine.widthAnchor.constraint(equalTo: widthAnchor).isActive = true
         underLine.heightAnchor.constraint(equalToConstant: 1).isActive = true
         underLine.bottomAnchor.constraint(equalTo: issueLabel.bottomAnchor).isActive = true
+    }
+    
+    private func setupBannerImage() {
+        addSubview(bannerImage)
+        bannerImage.isUserInteractionEnabled = true
+        bannerImage.translatesAutoresizingMaskIntoConstraints = false
+        bannerImage.widthAnchor.constraint(equalTo: widthAnchor).isActive = true
+        bannerImage.heightAnchor.constraint(equalTo: heightAnchor).isActive = true
+        bannerImage.image = DataFormatter.stringToImage(UrlList.banner.generateURL())
+        bannerImage.isHidden = true
     }
 }
 

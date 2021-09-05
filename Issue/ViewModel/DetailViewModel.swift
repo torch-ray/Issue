@@ -17,7 +17,8 @@ final class DetailViewModel: CommonViewModel {
     }()
     
     lazy var userImage: UIImage = {
-        return DataFormatter.stringToImage(storage.currentInfo().user.avatarURL)
+        let url = URL(string: storage.currentInfo().user.avatarURL)!
+        return DataFormatter.stringToImage(url)
     }()
     
     lazy var contentBody: Driver<String> = {
