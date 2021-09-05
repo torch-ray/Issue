@@ -14,13 +14,16 @@ final class MainViewController: UIViewController, ViewModelBindableType {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        
+        listCollectionView.register(IssueCell.self, forCellWithReuseIdentifier: IssueCell.identifier)
     }
     
     func bindViewModel() {
         viewModel.issuList
-            .drive(listCollectionView.rx.items(cellIdentifier: "IssueCell", cellType: IssueCell.self)) { _, issue, cell in
+            .drive(listCollectionView.rx.items(cellIdentifier: IssueCell.identifier, cellType: IssueCell.self)) { _, issue, cell in
                 cell.configrue(issue)
             }.disposed(by: rx.disposeBag)
+
     }
 }
 
