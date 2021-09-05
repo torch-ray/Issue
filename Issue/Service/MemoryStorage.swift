@@ -7,7 +7,8 @@ final class MemoryStrorage: MemoryStorageType {
     private var issueStorage: [Issue] = []
     private lazy var store = BehaviorSubject<[Issue]>(value: issueStorage)
     
-    let currentIssue = BehaviorRelay<Issue>(value: Issue.empty())
+    private var currentIssue = Issue.empty()
+    private lazy var currentStore = BehaviorSubject<Issue>(value: currentIssue)
     
     @discardableResult
     func create(_ issue: Issue) -> Observable<Issue> {
@@ -23,7 +24,13 @@ final class MemoryStrorage: MemoryStorageType {
     
     @discardableResult
     func selected(_ issue: Issue) -> Observable<Issue> {
-        currentIssue.accept(issue)
+        currentIssue = issue
+        currentStore.onNext(currentIssue)
         return Observable.just(issue)
+    }
+    
+    @discardableResult
+    func currentInfo() -> Observable<Issue> {
+        return currentStore
     }
 }

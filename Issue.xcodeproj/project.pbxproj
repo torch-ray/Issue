@@ -27,6 +27,7 @@
 		719D305526E44EBB0077AE0F /* NetworkManagerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719D305426E44EBB0077AE0F /* NetworkManagerType.swift */; };
 		719D305826E452140077AE0F /* IssueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719D305726E452140077AE0F /* IssueCell.swift */; };
 		719D305B26E45C4A0077AE0F /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719D305A26E45C4A0077AE0F /* URL.swift */; };
+		719D305D26E45EC10077AE0F /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719D305C26E45EC10077AE0F /* DetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		719D305426E44EBB0077AE0F /* NetworkManagerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerType.swift; sourceTree = "<group>"; };
 		719D305726E452140077AE0F /* IssueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueCell.swift; sourceTree = "<group>"; };
 		719D305A26E45C4A0077AE0F /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
+		719D305C26E45EC10077AE0F /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		801AA2F1DF256DB6CECE654D /* Pods-Issue.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Issue.debug.xcconfig"; path = "Target Support Files/Pods-Issue/Pods-Issue.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -162,8 +164,9 @@
 		719D303426E43ED30077AE0F /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				719D303526E43EDE0077AE0F /* MainViewModel.swift */,
 				719D303826E43EF90077AE0F /* CommonViewModel.swift */,
+				719D303526E43EDE0077AE0F /* MainViewModel.swift */,
+				719D305C26E45EC10077AE0F /* DetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 				719D303326E43E470077AE0F /* Scene.swift in Sources */,
 				719D304D26E44AE40077AE0F /* MemoryStorageType.swift in Sources */,
 				719D303026E43B230077AE0F /* MainViewController.swift in Sources */,
+				719D305D26E45EC10077AE0F /* DetailViewModel.swift in Sources */,
 				719D304B26E44ADC0077AE0F /* MemoryStorage.swift in Sources */,
 				719D303F26E43FF80077AE0F /* TransitionModel.swift in Sources */,
 				719D301926E4330D0077AE0F /* AppDelegate.swift in Sources */,

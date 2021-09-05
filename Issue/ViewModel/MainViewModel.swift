@@ -13,8 +13,9 @@ final class MainViewModel: CommonViewModel {
         callDefaultAPI(from: UrlList.apple)
     }
     
-    func moveToDetailVC() {
-        
+    func moveToDetailVC(_ issue: Issue) {
+        storage.selected(issue)
+        //let scene = Scene
     }
 }
 
