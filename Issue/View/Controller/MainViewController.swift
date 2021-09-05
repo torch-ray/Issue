@@ -47,8 +47,8 @@ private extension MainViewController {
         listCollectionView.rx.setDelegate(self).disposed(by: rx.disposeBag)
         
         listCollectionView.rx.modelSelected(Issue.self)
-            .subscribe(onNext: {_ in
-                
+            .subscribe(onNext: { [unowned self] issue in
+                self.viewModel.moveToDetailVC(issue)
             }).disposed(by: rx.disposeBag)
     }
 }

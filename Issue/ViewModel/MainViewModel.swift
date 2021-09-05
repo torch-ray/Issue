@@ -15,7 +15,9 @@ final class MainViewModel: CommonViewModel {
     
     func moveToDetailVC(_ issue: Issue) {
         storage.selected(issue)
-        //let scene = Scene
+        let viewModel = DetailViewModel(storage: storage, sceneCoordinator: sceneCoordinator)
+        let scene = Scene.DetailVC(viewModel)
+        sceneCoordinator.transition(to: scene, using: .push, animated: false)
     }
 }
 
