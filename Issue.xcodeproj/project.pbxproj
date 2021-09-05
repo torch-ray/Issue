@@ -20,6 +20,8 @@
 		719D303D26E43FC80077AE0F /* SceneCoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719D303C26E43FC80077AE0F /* SceneCoordinatorType.swift */; };
 		719D303F26E43FF80077AE0F /* TransitionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719D303E26E43FF80077AE0F /* TransitionModel.swift */; };
 		719D304126E4401D0077AE0F /* SceneCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719D304026E4401D0077AE0F /* SceneCoordinator.swift */; };
+		719D304426E442830077AE0F /* CoreDataStorageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719D304326E442830077AE0F /* CoreDataStorageType.swift */; };
+		719D304626E4428E0077AE0F /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719D304526E4428E0077AE0F /* CoreDataStorage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,8 @@
 		719D303C26E43FC80077AE0F /* SceneCoordinatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCoordinatorType.swift; sourceTree = "<group>"; };
 		719D303E26E43FF80077AE0F /* TransitionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionModel.swift; sourceTree = "<group>"; };
 		719D304026E4401D0077AE0F /* SceneCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCoordinator.swift; sourceTree = "<group>"; };
+		719D304326E442830077AE0F /* CoreDataStorageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorageType.swift; sourceTree = "<group>"; };
+		719D304526E4428E0077AE0F /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
 		801AA2F1DF256DB6CECE654D /* Pods-Issue.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Issue.debug.xcconfig"; path = "Target Support Files/Pods-Issue/Pods-Issue.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,6 +96,7 @@
 		719D301726E4330D0077AE0F /* Issue */ = {
 			isa = PBXGroup;
 			children = (
+				719D304226E442740077AE0F /* Service */,
 				719D303426E43ED30077AE0F /* ViewModel */,
 				719D302D26E434660077AE0F /* View */,
 				719D302C26E4345C0077AE0F /* Supports */,
@@ -147,6 +152,15 @@
 				719D303826E43EF90077AE0F /* CommonViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		719D304226E442740077AE0F /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				719D304326E442830077AE0F /* CoreDataStorageType.swift */,
+				719D304526E4428E0077AE0F /* CoreDataStorage.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,10 +276,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				719D304626E4428E0077AE0F /* CoreDataStorage.swift in Sources */,
 				719D303626E43EDE0077AE0F /* MainViewModel.swift in Sources */,
 				719D304126E4401D0077AE0F /* SceneCoordinator.swift in Sources */,
 				719D303D26E43FC80077AE0F /* SceneCoordinatorType.swift in Sources */,
 				719D303926E43EF90077AE0F /* CommonViewModel.swift in Sources */,
+				719D304426E442830077AE0F /* CoreDataStorageType.swift in Sources */,
 				719D303B26E43F4C0077AE0F /* ViewModelBindableType.swift in Sources */,
 				719D303326E43E470077AE0F /* Scene.swift in Sources */,
 				719D303026E43B230077AE0F /* MainViewController.swift in Sources */,
