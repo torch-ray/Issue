@@ -54,6 +54,7 @@ private extension SearchViewController {
         repositorySearchTextField.rx.controlEvent(.editingDidEndOnExit)
             .subscribe(onNext: { [unowned self] _ in
                 self.viewModel.makeCloseAction()
+                self.viewModel.searchRepository(repositorySearchTextField.text ?? "")
             }).disposed(by: rx.disposeBag)
     }
 }

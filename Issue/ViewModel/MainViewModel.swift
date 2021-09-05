@@ -12,7 +12,7 @@ final class MainViewModel: CommonViewModel {
     
     override init(storage: MemoryStorageType, sceneCoordinator: SceneCoordinatorType) {
         super.init(storage: storage, sceneCoordinator: sceneCoordinator)
-        callDefaultAPI(from: UrlList.appleSwift(title.value))
+        callDefaultAPI(from: UrlList.repository(title.value))
     }
     
     func moveToDetailVC(_ issue: Issue) {
