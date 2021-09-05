@@ -1,5 +1,6 @@
 import Foundation
 import RxSwift
+import RxCocoa
 
 extension UIViewController {
     var sceneViewController: UIViewController {
@@ -35,6 +36,11 @@ final class SceneCoordinator: SceneCoordinatorType {
                 subject.onError(TransitionError.cannotFindNavigationController)
                 break
             }
+            
+            nav.rx.willShow
+                .subscribe(onNext: { event in
+                    self.currentVC = event.viewController.sceneViewController
+                }).disposed(by: disposeBag)
             
             nav.pushViewController(target, animated: animated)
             currentVC = target.sceneViewController
