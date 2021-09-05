@@ -8,4 +8,7 @@ protocol MemoryStorageType {
     
     @discardableResult
     func list() -> Observable<[Issue]>
+    
+    @discardableResult
+    func selected(_ issue: Issue) -> Observable<Issue>
 }

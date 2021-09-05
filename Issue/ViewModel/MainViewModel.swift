@@ -12,6 +12,10 @@ final class MainViewModel: CommonViewModel {
         super.init(storage: storage, sceneCoordinator: sceneCoordinator)
         callDefaultAPI(from: UrlList.apple)
     }
+    
+    func moveToDetailVC() {
+        
+    }
 }
 
 private extension MainViewModel {

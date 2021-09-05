@@ -5,6 +5,10 @@ struct Issue: Codable {
     let title: String
     let user: User
     let body: String?
+    
+    static func empty() -> Issue {
+        return Issue(number: 0, title: "", user: User(login: "", avatarURL: ""), body: "")
+    }
 }
 
 struct User: Codable {
