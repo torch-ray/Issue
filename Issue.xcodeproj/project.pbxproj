@@ -28,6 +28,7 @@
 		719D305826E452140077AE0F /* IssueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719D305726E452140077AE0F /* IssueCell.swift */; };
 		719D305B26E45C4A0077AE0F /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719D305A26E45C4A0077AE0F /* URL.swift */; };
 		719D305D26E45EC10077AE0F /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719D305C26E45EC10077AE0F /* DetailViewModel.swift */; };
+		719D305F26E45FE30077AE0F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719D305E26E45FE30077AE0F /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		719D305726E452140077AE0F /* IssueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueCell.swift; sourceTree = "<group>"; };
 		719D305A26E45C4A0077AE0F /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		719D305C26E45EC10077AE0F /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		719D305E26E45FE30077AE0F /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		801AA2F1DF256DB6CECE654D /* Pods-Issue.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Issue.debug.xcconfig"; path = "Target Support Files/Pods-Issue/Pods-Issue.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -146,6 +148,7 @@
 			children = (
 				719D302F26E43B230077AE0F /* MainViewController.swift */,
 				719D303A26E43F4C0077AE0F /* ViewModelBindableType.swift */,
+				719D305E26E45FE30077AE0F /* DetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 				719D305B26E45C4A0077AE0F /* URL.swift in Sources */,
 				719D303926E43EF90077AE0F /* CommonViewModel.swift in Sources */,
 				719D303B26E43F4C0077AE0F /* ViewModelBindableType.swift in Sources */,
+				719D305F26E45FE30077AE0F /* DetailViewController.swift in Sources */,
 				719D303326E43E470077AE0F /* Scene.swift in Sources */,
 				719D304D26E44AE40077AE0F /* MemoryStorageType.swift in Sources */,
 				719D303026E43B230077AE0F /* MainViewController.swift in Sources */,
